@@ -1,10 +1,20 @@
 def fastPow(number, power):
+
+    # нули
     if power == 0:
         return 1
     if number == 0:
         if power < 0:
             return "0 cannot be raised to a negative power"
         return 0
+    #отрицательная степень
+    if power < 0:
+        number = 1 / number
+        power = -power
+
+    
+
+
 
     result = 1
     base = number
