@@ -1,4 +1,4 @@
-def luhnСheck(cardNumber):
+def luhnCheck(cardNumber):
     digits = [int(d) for d in str(cardNumber) if d.isdigit()]
     control = digits.pop()
     parity = (len(digits))%2
