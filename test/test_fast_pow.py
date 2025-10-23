@@ -9,6 +9,6 @@ def test_negative():
     assert fast_pow(-1, 4) == 1
 
 
-def test_three_power_three(random_num_with_pow):
+def test_three_power_three():
     assert fast_pow(3, 3) == 27
 
