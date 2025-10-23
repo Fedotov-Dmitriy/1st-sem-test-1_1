@@ -31,3 +31,21 @@ def luhn_check(card_number):
         else:
             total += digits[i]
     return (total + control) % 10 == 0
+
+
+
+def main()
+    print("Введите номер карты (или -1 для выхода):")
+    while True:
+            try:
+                line = input().strip()
+            except EOFError:
+                return 0
+            except KeyboardInterrupt:
+                print("\nЗавершение по Ctrl-C.")
+                return 0
+            if line == "-1":
+                return 0
+            print("correct" if ok else "incorrect")
+if __name__ == "__main__":
+    raise SystemExit(main())
