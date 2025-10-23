@@ -12,6 +12,7 @@ def test_bad():
     assert not luhn_check("4  5  6  1     2  6  1  2     1  2  3  4     5  4  6  4")
     assert not luhn_check("4  5  6  1     2  6  1  2     1  2  3  4     5  4  6  7")
 
+
 def test_invalid():
     with pytest.raises(ValueError):
         luhn_check("abc")
