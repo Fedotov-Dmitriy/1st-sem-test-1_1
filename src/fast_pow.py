@@ -1,4 +1,4 @@
-def fastPow(number, power):
+def fast_pow(number, power):
     #проверка степени
     if not isinstance(power, int):
         raise TypeError("power must be an integer")
