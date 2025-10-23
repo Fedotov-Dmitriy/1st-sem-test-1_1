@@ -12,3 +12,4 @@ def luhn_check(card_number):
         else:
             total += digits[i]
     return (total + control) % 10 == 0
+
