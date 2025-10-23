@@ -11,3 +11,11 @@ def test_another_bad():
 
 def test_good():
     assert luhn_check("8571 2612 1234 5466")
+
+
+def test_another_good():
+    assert luhn_check("7529 4629 3712 3155")
+
+
+def test_not_16_digits_good():
+    assert luhn_check("13433")
