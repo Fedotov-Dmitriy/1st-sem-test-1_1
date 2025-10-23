@@ -1,11 +1,13 @@
-def luhn_check(cardNumber):
+def luhn_check(card_number):
+    #проверка строки
+    if not isinstance(card_number, str):
+        raise TypeError("card_number должен быть строкой")
 
 
 
 
 
-
-    digits = [int(d) for d in str(cardNumber) if d.isdigit()]
+    digits = [int(d) for d in str(card_number) if d.isdigit()]
     control = digits.pop()
     parity = (len(digits))%2
     total = 0
