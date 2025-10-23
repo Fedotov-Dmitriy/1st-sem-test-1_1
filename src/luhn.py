@@ -12,3 +12,15 @@ def luhn_check(card_number):
         else:
             total += digits[i]
     return (total + control) % 10 == 0
+
+
+if __name__ == "__main__":
+    card_number = input("Введите номер карты: ")
+    while card_number != "-i":
+        try:
+            print("Верный номер" if luhn_check(card_number) else "Неверный номер")
+        except IndexError:
+            print("Введено не число")
+        finally:
+            card_number = input("Введите номер карты: ")
+    print("Завершение работы")
