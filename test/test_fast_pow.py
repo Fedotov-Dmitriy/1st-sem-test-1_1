@@ -12,3 +12,6 @@ def test_negative():
 def test_three_power_three():
     assert fast_pow(3, 3) == 27
 
+
+def test_another_negative():
+    assert fast_pow(-2, 3) == -8
