@@ -12,3 +12,25 @@ def luhnСheck(cardNumber):
         else:
             total += digits[i]
     return (total + control) % 10 == 0
+
+
+def utility(cardNumber):
+    cardNumber = input('Введите номер карты(или -1, чтобы выйти)')
+    flag = False
+    while cardNumber != "-1":
+        if flag:
+            print("Вы неправильно ввели номер карты, будте внимательны")
+            cardNumber = input('Введите номер карты(или -1, чтобы выйти):')
+        for i in range(len(cardNumber)):
+            if i % 4 == 0:
+                if cardNumber != " ":
+                    flag = True
+            else:
+                if cardNumber[i] not in '1234567890':
+                    flag = True
+        if not flag:
+            if luhnСheck(cardNumber):
+                print("Correct")
+            else:
+                print("Incorect")
+            cardNumber = input('Введите номер карты(или -1, чтобы выйти):')
