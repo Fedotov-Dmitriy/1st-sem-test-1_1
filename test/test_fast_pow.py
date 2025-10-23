@@ -21,7 +21,13 @@ def test_negative_power():
     assert fast_pow(-0.2, -1) - 5 <= epsilon
 
 
-def edge_cases():
+def test_edge_cases():
     assert fast_pow(1100101, 0) == 1
     assert fast_pow(-13, 0) == 1
     assert fast_pow(111, 0) == 1
+
+
+def test_roots():
+    assert fast_pow(9, 0.5) == 3
+    assert fast_pow(8, 1 / 3) == 2
+    assert fast_pow(64, 1 / 6) == 2
