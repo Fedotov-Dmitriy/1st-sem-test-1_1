@@ -1,4 +1,4 @@
-from src.fast_pow import fast_pow
+from src.fast_pow import fast_pow, NegativePowerException
 import pytest
 import random
 
@@ -13,8 +13,14 @@ def test_negative():
 
 @pytest.fixture
 def random_n():
-    return random.randint(1, 100)
+    return random.randint(1, 10)
 
 
-def test_negative_power(random_n):
-    assert fast_pow(10, -1) == 10 ** (-1)
+def test_value_based(random_n):
+    assert fast_pow(5, random_n) == 5 ** random_n
+
+
+@pytest.mark.parametrize(["number", "power"], [(0, 0), (-1, -1), (0, -1), (1, -1), (1, 0)])
+@pytest.mark.xfail(raises=NegativePowerException)
+def test_negative_power(number, power):
+    assert fast_pow(number, power)
