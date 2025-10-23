@@ -29,9 +29,9 @@ def luhn_check(card_number):
 if __name__ == "__main__":
     while True:
         number = input("Enter card number: ")
+        if number == "-1": break
         try:
             result = luhn_check(number)
-            if result == -1: break
             if result: print("correct")
             else: print("incorrect")
             break
