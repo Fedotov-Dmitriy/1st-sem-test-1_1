@@ -1,10 +1,10 @@
-def luhnСheck(cardNumber):
-    digits = [int(d) for d in str(cardNumber) if d.isdigit()]
+def luhn_check(card_number):
+    digits = [int(d) for d in str(card_number) if d.isdigit()]
     control = digits.pop()
-    parity = (len(digits))%2
+    parity = (len(digits)) % 2
     total = 0
     for i in range(len(digits)):
-        if i % 2 == parity:
+        if i % 2 != parity:
             doubled = digits[i] * 2
             if doubled > 9:
                 doubled -= 9
@@ -12,3 +12,11 @@ def luhnСheck(cardNumber):
         else:
             total += digits[i]
     return (total + control) % 10 == 0
+
+
+if __name__ == "__main__":
+    while (card := input("Input card number (-1 for exit): ")) != "-1":
+        if luhn_check(card):
+            print("correct")
+        else:
+            print("incorrect")
