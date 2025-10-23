@@ -1,7 +1,9 @@
 def luhn_check(card_number):
-    digits = [int(d) for d in str(card_number) if d.isdigit()]
-    control = digits.pop()
-    parity = (len(digits))%2
+    assert isinstance(card_number, str), "Error: card_number must be string"
+    card_number = card_number.replace(' ', '')
+    assert card_number.isdigit(), "Error: card_number must be string of digits"
+    digits = [int(d) for d in card_number]
+    parity = (len(digits)) % 2
     total = 0
     for i in range(len(digits)):
         if i % 2 == parity:
@@ -11,5 +13,5 @@ def luhn_check(card_number):
             total += doubled
         else:
             total += digits[i]
-    return (total + control) % 10 == 0
+    return total % 10 == 0
 
