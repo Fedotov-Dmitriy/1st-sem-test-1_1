@@ -10,7 +10,7 @@ def test_zero():
 
 def test_fuzzy():
     for x in range(1, 10):
-        for y in range(1, 10):
+        for y in range(-10, 10):
             assert fast_pow(x, y) == x**y
 
 def test_negative():
