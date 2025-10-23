@@ -3,7 +3,7 @@ def fast_pow(number, power):
     result = number
 
     if power < 0:
-        raise InvalidPowerError("Отрицательная степень не поддерживается")
+        raise TypeError("Отрицательная степень не поддерживается")
 
     if not isinstance(power, int):
         raise TypeError("Степень всегда является целым числом")
