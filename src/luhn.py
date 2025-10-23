@@ -12,3 +12,11 @@ def luhn_check(card_number):
         else:
             total += digits[i]
     return (total + control) % 10 == 0
+
+
+if __name__ == "__main__":
+    while (card := input("Input card number (-1 for exit): ")) != "-1":
+        if luhn_check(card):
+            print("correct")
+        else:
+            print("incorrect")
