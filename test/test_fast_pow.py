@@ -1,6 +1,8 @@
-from src.fast_pow import fast_pow, NegativePowerException
-import pytest
 import random
+
+import pytest
+
+from src.fast_pow import NegativePowerError, fast_pow
 
 
 def test_two_power_two():
@@ -17,10 +19,12 @@ def random_n():
 
 
 def test_value_based(random_n):
-    assert fast_pow(5, random_n) == 5 ** random_n
+    assert fast_pow(5, random_n) == 5**random_n
 
 
-@pytest.mark.parametrize(["number", "power"], [(0, 0), (-1, -1), (0, -1), (1, -1), (1, 0)])
-@pytest.mark.xfail(raises=NegativePowerException)
+@pytest.mark.parametrize(
+    ["number", "power"], [(0, 0), (-1, -1), (0, -1), (1, -1), (1, 0)]
+)
+@pytest.mark.xfail(raises=NegativePowerError)
 def test_negative_power(number, power):
     assert fast_pow(number, power)
