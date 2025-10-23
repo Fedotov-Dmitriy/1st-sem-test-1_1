@@ -1,4 +1,4 @@
-def fastPow(number, power):
+def fast_pow(number, power):
     result = number
     while power != 1:
         result *= result
