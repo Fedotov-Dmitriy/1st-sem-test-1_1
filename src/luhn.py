@@ -1,7 +1,7 @@
 def luhnСheck(cardNumber):
     digits = [int(d) for d in str(cardNumber) if d.isdigit()]
+    parity = (len(digits)) % 2
     control = digits.pop()
-    parity = (len(digits))%2
     total = 0
     for i in range(len(digits)):
         if i % 2 == parity:
