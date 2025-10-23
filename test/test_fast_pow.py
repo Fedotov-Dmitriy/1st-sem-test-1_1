@@ -1,9 +1,23 @@
-from src.fast_pow import fastPow
+from src.fast_pow import fast_pow
 
 
 def test_two_power_two():
-    assert fastPow(2, 2) == 4
+    assert fast_pow(2, 2) == 4
 
 
 def test_negative():
-    assert fastPow(-1, 4) == 1
+    assert fast_pow(-1, 4) == 1
+    assert fast_pow(-2, 3) == -8
+
+def test_negative_power():
+    assert fast_pow(5,-1) == 0.2
+    assert fast_pow(10, -2) == 0.01
+    assert fast_pow(77, -5) == 77**(-5)
+
+    assert fast_pow(-0.2, -2) == 25
+    assert fast_pow(-0.2, -1) == 5
+
+def edge_cases():
+    assert fast_pow(1100101, 0) == 1
+    assert fast_pow(-13, 0) == 1
+    assert fast_pow(111, 0) == 1
