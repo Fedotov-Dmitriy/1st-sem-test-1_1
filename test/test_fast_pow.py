@@ -1,3 +1,5 @@
+import pytest
+
 from src.fast_pow import fast_pow
 
 
@@ -15,3 +17,7 @@ def test_fuzzy():
 
 def test_negative():
     assert fast_pow(-1, 4) == 1
+
+def test_zero():
+    with pytest.raises(ZeroDivisionError):
+        fast_pow(0, -5)
