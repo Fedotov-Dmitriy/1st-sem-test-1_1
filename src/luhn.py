@@ -4,9 +4,15 @@ def luhn_check(card_number):
         raise TypeError("card_number должен быть строкой")
     #проверка на корректный ввод
 
-
-
-
+    digits = []
+    #проверка на корректность ввода
+    for ch in card_number:
+        if ch.isdecimal():
+            digits.append(int(ch))
+        elif ch in " \t\r\n":
+            continue
+        else
+            raise ValueError("Кривой ввод")
 
     digits = [int(d) for d in str(card_number) if d.isdigit()]
 
