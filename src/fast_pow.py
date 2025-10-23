@@ -1,4 +1,7 @@
 def fastPow(number, power):
+    #проверка степени
+    if not isinstance(power, int):
+        raise TypeError("power must be an integer")
 
     # нули
     if power == 0:
@@ -12,7 +15,7 @@ def fastPow(number, power):
         number = 1 / number
         power = -power
 
-    
+
 
 
 
