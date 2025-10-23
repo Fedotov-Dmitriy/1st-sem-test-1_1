@@ -4,7 +4,9 @@ def luhn_check(card_number):
     parity = len(digits) % 2  # delete extra brackets
     total = 0
     for i in range(len(digits)):
-        if i % 2 == parity:
+        if (
+            i % 2 != parity
+        ):  # fix error, != instead of == by definition of the algorithm
             doubled = digits[i] * 2
             if doubled > 9:
                 doubled -= 9
