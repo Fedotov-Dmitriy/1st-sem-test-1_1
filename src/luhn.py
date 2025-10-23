@@ -1,10 +1,14 @@
 def luhn_check(card_number):
     if not all(x.isdigit() or x.isspace() for x in str(card_number)):
-        raise ValueError("card_number should only consist of numbers and whitespace characters")
+        raise ValueError(
+                "card_number should only consist of numbers and whitespace characters"
+        )
 
     spaces = sum(1 for x in str(card_number) if x.isspace())
     if spaces != 0 and spaces != 3:
-        raise ValueError("card_number should only have zero or three whitespace characters")
+        raise ValueError(
+                "card_number should only have zero or three whitespace characters"
+        )
     if spaces != 0 and not all(len(x) == 4 for x in card_number.split()):
         raise ValueError("Each fragment of card_number should contain 4 digits")
 
@@ -27,11 +31,17 @@ def luhn_check(card_number):
 if __name__ == "__main__":
     while True:
         number = input("Enter card number: ")
-        if number == "-1": break
+        if number == "-1":
+            break
+
         try:
             result = luhn_check(number)
-            if result: print("correct")
-            else: print("incorrect")
+
+            if result:
+                print("correct")
+            else:
+                print("incorrect")
+
             break
         except ValueError as e:
             if 'card_number' in str(e):
