@@ -12,19 +12,17 @@ def luhn_check(card_number):
     if len(digits) != 16:
         raise ValueError("card_number should have exactly 16 digits")
 
-    control = digits.pop()
     parity = (len(digits))%2
     total = 0
     for i in range(len(digits)):
+        digit = digits[i]
         if i % 2 == parity:
-            doubled = digits[i] * 2
-            if doubled > 9:
-                doubled -= 9
-            total += doubled
-        else:
-            total += digits[i]
+            digit *= 2
+            if digit > 9:
+                digit -= 9
+        total += digit
 
-    return (total + control) % 10 == 0
+    return total % 10 == 0
 
 if __name__ == "__main__":
     while True:
