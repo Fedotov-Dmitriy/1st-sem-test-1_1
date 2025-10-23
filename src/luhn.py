@@ -15,3 +15,15 @@ def luhn_check(card_number):
             total += digits[i]
     return total % 10 == 0
 
+if __name__ == "__main__":
+    inp = input("Enter card number: ")
+    while inp != '-1':
+        try:
+            res = luhn_check(inp)
+            print("correct" if res else "incorrect")
+        except AssertionError as ex:
+            print(ex)
+        finally:
+            inp = input("Enter card number: ")
+
+    print("Bye!")
