@@ -1,6 +1,9 @@
 def fastPow(number, power):
-    result = number
-    while power != 1:
-        result *= result
+    result = 1
+    base = number
+    while power > 0:
+        if power % 2 == 1:
+            result*=base
+        base *= base
         power >>= 1
     return result
