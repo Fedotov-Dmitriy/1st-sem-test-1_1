@@ -11,7 +11,7 @@ def luhn_check(card_number):
             digits.append(int(ch))
         elif ch in " \t\r\n":
             continue
-        else
+        else:
             raise ValueError("Кривой ввод")
 
     digits = [int(d) for d in str(card_number) if d.isdigit()]
