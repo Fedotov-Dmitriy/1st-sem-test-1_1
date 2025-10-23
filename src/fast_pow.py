@@ -1,10 +1,12 @@
 def fastPow(number, power):
-    result = number
-    deg = 1
-    while deg * 2 < power:
-        result *= result
-        deg *= 2
-    while deg < power:
-        result *= number
-        deg += 1
-    return result
+    if power > 0:
+        result = number
+        deg = 1
+        while deg * 2 < power:
+            result *= result
+            deg *= 2
+        while deg < power:
+            result *= number
+            deg += 1
+        return result
+    return "Отрицательная степень!"
