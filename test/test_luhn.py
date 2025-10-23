@@ -1,9 +1,21 @@
-from src.luhn import luhnСheck
-
-
-def test_good():
-    assert luhnСheck("8571 2612 1234 5467")
+from src.luhn import luhn_check
 
 
 def test_bad():
-    assert not luhnСheck("4561 2612 1234 5463")
+    assert not luhn_check("8571 2612 1234 5467")
+
+
+def test_another_bad():
+    assert not luhn_check("4561 2612 1234 5463")
+
+
+def test_good():
+    assert luhn_check("8571 2612 1234 5466")
+
+
+def test_another_good():
+    assert luhn_check("7529 4629 3712 3155")
+
+
+def test_not_16_digits_good():
+    assert luhn_check("13433")
