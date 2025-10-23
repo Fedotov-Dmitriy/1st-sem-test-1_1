@@ -1,6 +1,10 @@
 def fastPow(number, power):
     result = number
-    while power != 1:
+    deg = 1
+    while deg * 2 < power:
         result *= result
-        power = power // 2
+        deg *= 2
+    while deg < power:
+        result *= number
+        deg += 1
     return result
