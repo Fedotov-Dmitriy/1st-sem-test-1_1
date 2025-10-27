@@ -1,4 +1,5 @@
 def fast_pow(number, power):
+    
     if power < 0:
         number = 1 / number
         power = -power
@@ -9,4 +10,5 @@ def fast_pow(number, power):
         number *=number
         power //= 2
     return result
+
 
