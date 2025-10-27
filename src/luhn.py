@@ -1,5 +1,4 @@
 
-
 def luhn_check(card_number):
     digits = [int(d) for d in str(card_number) if d.isdigit()]
     control = digits.pop()
@@ -29,4 +28,3 @@ def utility():
         except Exception as e:
             print(f"Произошла ошибка: {e}")
 
-utility()
