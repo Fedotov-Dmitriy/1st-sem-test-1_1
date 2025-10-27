@@ -29,3 +29,4 @@ def utility():
             print(f"Произошла ошибка: {e}")
 
 
+utility()
