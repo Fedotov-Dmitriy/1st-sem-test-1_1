@@ -7,3 +7,6 @@ def test_two_power_two():
 
 def test_negative():
     assert fast_pow(-1, 4) == 1
+
+
+
