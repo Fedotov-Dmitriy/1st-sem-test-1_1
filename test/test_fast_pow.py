@@ -9,4 +9,3 @@ def test_negative():
     assert fast_pow(-1, 4) == 1
 
 
-
